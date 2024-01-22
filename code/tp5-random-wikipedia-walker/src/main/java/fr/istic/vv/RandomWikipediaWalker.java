@@ -32,7 +32,9 @@ public class RandomWikipediaWalker {
 
         for(WebElement link : allLinks){
             try {
-                links.add(link.getAttribute("href"));
+                if(!link.getText().contains(".pdf")){
+                    links.add(link.getAttribute("href"));
+                }
             } catch (Exception e) {
                 // TODO: handle exception
             }
